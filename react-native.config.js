@@ -3,11 +3,11 @@ module.exports = {
     platforms: {
       android: {
         packageImportPath:
-          "import com.github.amarcruz.rntextsize.RNTextSizePackage;",
-        packageInstance: "new RNTextSizePackage()",
+          "import com.github.amarcruz.rntextsize.RNTextDimensionsPackage;",
+        packageInstance: "new RNTextDimensionsPackage()",
       },
       ios: {
-        podspecPath: "ios/RNTextSize.podspec",
+        podspecPath: "ios/RNTextDimensions.podspec",
       },
     },
   },
