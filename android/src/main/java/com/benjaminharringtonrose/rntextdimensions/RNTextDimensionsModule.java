@@ -1,4 +1,4 @@
-package com.github.amarcruz.rntextsize;
+package com.benjaminharringtonrose.rntextdimensions;
 
 import android.content.res.AssetManager;
 import android.graphics.Paint;
@@ -31,8 +31,8 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-class RNTextSizeModule extends ReactContextBaseJavaModule {
-    private static final String TAG = "RNTextSize";
+class RNTextDimensionsModule extends ReactContextBaseJavaModule {
+    private static final String TAG = "RNTextDimensions";
     private static final float SPACING_ADDITION = 0f;
     private static final float SPACING_MULTIPLIER = 1f;
 
@@ -47,7 +47,7 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
 
     private final ReactApplicationContext mReactContext;
 
-    RNTextSizeModule(ReactApplicationContext reactContext) {
+    RNTextDimensionsModule(ReactApplicationContext reactContext) {
         super(reactContext);
         mReactContext = reactContext;
     }
@@ -63,7 +63,7 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
     @SuppressWarnings("unused")
     @ReactMethod
     public void measure(@Nullable final ReadableMap specs, final Promise promise) {
-        final RNTextSizeConf conf = getConf(specs, promise, true);
+        final RNTextDimensionsConf conf = getConf(specs, promise, true);
         if (conf == null) {
             return;
         }
@@ -88,7 +88,7 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
             return;
         }
 
-        final SpannableString text = (SpannableString) RNTextSizeSpannedText
+        final SpannableString text = (SpannableString) RNTextDimensionsSpannedText
                 .spannedFromSpecsAndText(mReactContext, conf, new SpannableString(_text));
 
         final TextPaint textPaint = new TextPaint(TextPaint.ANTI_ALIAS_FLAG);
@@ -183,7 +183,7 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
     @SuppressWarnings("unused")
     @ReactMethod
     public void flatHeights(@Nullable final ReadableMap specs, final Promise promise) {
-        final RNTextSizeConf conf = getConf(specs, promise, true);
+        final RNTextDimensionsConf conf = getConf(specs, promise, true);
         if (conf == null) {
             return;
         }
@@ -202,7 +202,7 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
         final WritableArray result = Arguments.createArray();
 
         final SpannableStringBuilder sb = new SpannableStringBuilder(" ");
-        RNTextSizeSpannedText.spannedFromSpecsAndText(mReactContext, conf, sb);
+        RNTextDimensionsSpannedText.spannedFromSpecsAndText(mReactContext, conf, sb);
 
         final TextPaint textPaint = new TextPaint(TextPaint.ANTI_ALIAS_FLAG);
         Layout layout;
@@ -288,11 +288,11 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
     @SuppressWarnings("unused")
     @ReactMethod
     public void fontFromSpecs(@Nullable final ReadableMap specs, final Promise promise) {
-        final RNTextSizeConf conf = getConf(specs, promise);
+        final RNTextDimensionsConf conf = getConf(specs, promise);
         if (conf == null) {
             return;
         }
-        final Typeface typeface = RNTextSizeConf.getFont(mReactContext, conf.fontFamily, conf.fontStyle);
+        final Typeface typeface = RNTextDimensionsConf.getFont(mReactContext, conf.fontFamily, conf.fontStyle);
         final TextPaint textPaint = sTextPaintInstance;
         final int fontSize = (int) Math.ceil(conf.scale(conf.fontSize));
 
@@ -350,16 +350,16 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
     // ============================================================================
 
     @Nullable
-    private RNTextSizeConf getConf(final ReadableMap specs, final Promise promise, boolean forText) {
+    private RNTextDimensionsConf getConf(final ReadableMap specs, final Promise promise, boolean forText) {
         if (specs == null) {
             promise.reject(E_MISSING_PARAMETER, "Missing parameter object.");
             return null;
         }
-        return new RNTextSizeConf(specs, forText);
+        return new RNTextDimensionsConf(specs, forText);
     }
 
     @Nullable
-    private RNTextSizeConf getConf(final ReadableMap specs, final Promise promise) {
+    private RNTextDimensionsConf getConf(final ReadableMap specs, final Promise promise) {
         return getConf(specs, promise, false);
     }
 
@@ -387,11 +387,11 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
         map.putString("fontFamily", suffix != null ? (roboto + suffix) : roboto);
         map.putInt("fontSize", fontSize);
 
-        if (RNTextSizeConf.supportLetterSpacing()) {
+        if (RNTextDimensionsConf.supportLetterSpacing()) {
             map.putDouble("letterSpacing", letterSpacing);
         }
 
-        if (upcase && RNTextSizeConf.supportUpperCaseTransform()) {
+        if (upcase && RNTextDimensionsConf.supportUpperCaseTransform()) {
             map.putString("textTransform", "uppercase");
         }
 
@@ -406,7 +406,7 @@ class RNTextSizeModule extends ReactContextBaseJavaModule {
     private WritableMap fontInfoFromTypeface(
             @Nonnull final TextPaint textPaint,
             @Nonnull final Typeface typeface,
-            @Nonnull final RNTextSizeConf conf
+            @Nonnull final RNTextDimensionsConf conf
     ) {
         // Info is always in unscaled values
         final float density = getCurrentDensity();

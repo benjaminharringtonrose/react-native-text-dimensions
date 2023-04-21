@@ -1,4 +1,4 @@
-package com.github.amarcruz.rntextsize;
+package com.benjaminharringtonrose.rntextdimensions;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -11,12 +11,12 @@ import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class RNTextSizePackage implements ReactPackage {
+public class RNTextDimensionsPackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
       List<NativeModule> modules = new ArrayList<>();
-      modules.add(new RNTextSizeModule(reactContext));
+      modules.add(new RNTextDimensionsModule(reactContext));
       return modules;
     }
 

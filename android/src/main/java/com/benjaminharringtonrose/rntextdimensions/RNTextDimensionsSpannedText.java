@@ -1,4 +1,4 @@
-package com.github.amarcruz.rntextsize;
+package com.benjaminharringtonrose.rntextdimensions;
 
 import android.annotation.TargetApi;
 import android.graphics.Typeface;
@@ -12,13 +12,13 @@ import com.facebook.react.bridge.ReactApplicationContext;
 
 import javax.annotation.Nonnull;
 
-final class RNTextSizeSpannedText {
+final class RNTextDimensionsSpannedText {
 
-    RNTextSizeSpannedText() {}
+    RNTextDimensionsSpannedText() {}
 
     static Spannable spannedFromSpecsAndText(
             @Nonnull final ReactApplicationContext context,
-            @Nonnull final RNTextSizeConf conf,
+            @Nonnull final RNTextDimensionsConf conf,
             @Nonnull final Spannable text
     ) {
 
@@ -46,7 +46,7 @@ final class RNTextSizeSpannedText {
         if (conf.fontFamily != null || conf.has("fontStyle") || conf.has("fontWeight")) {
             priority++;
             setSpanOperation(text, end, priority,
-                    new CustomStyleSpan(RNTextSizeConf.getFont(context, conf.fontFamily, conf.fontStyle)));
+                    new CustomStyleSpan(RNTextDimensionsConf.getFont(context, conf.fontFamily, conf.fontStyle)));
         }
 
         return text;

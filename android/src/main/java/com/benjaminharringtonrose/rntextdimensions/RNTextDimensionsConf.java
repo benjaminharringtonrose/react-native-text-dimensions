@@ -1,4 +1,4 @@
-package com.github.amarcruz.rntextsize;
+package com.benjaminharringtonrose.rntextdimensions;
 
 import android.graphics.Typeface;
 import android.os.Build;
@@ -19,7 +19,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 @SuppressWarnings("SameParameterValue")
-final class RNTextSizeConf {
+final class RNTextDimensionsConf {
 
     private static final float DEF_FONTSIZE = 14.0f;
     private static final int reactNativeVersion;
@@ -31,7 +31,7 @@ final class RNTextSizeConf {
             Map<String, Object> rnv = com.facebook.react.modules.systeminfo.ReactNativeVersion.VERSION;
             version = ((int) rnv.get("major") << 16) | (int) rnv.get("minor");
         } catch (Exception ex) {
-            Log.v("RNTextSize", "Cannot get RN version.", ex);
+            Log.v("RNTextDimensions", "Cannot get RN version.", ex);
         }
         reactNativeVersion = version;
     }
@@ -77,7 +77,7 @@ final class RNTextSizeConf {
      * @param options User options
      * @param forText This will be used for measure text?
      */
-    RNTextSizeConf(@Nonnull final ReadableMap options, final boolean forText) {
+    RNTextDimensionsConf(@Nonnull final ReadableMap options, final boolean forText) {
         mOpts = options;
 
         allowFontScaling = forText && getBooleanOrTrue("allowFontScaling");
