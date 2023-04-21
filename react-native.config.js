@@ -7,7 +7,7 @@ module.exports = {
         packageInstance: "new RNTextDimensionsPackage()",
       },
       ios: {
-        podspecPath: "ios/RNTextDimensions.podspec",
+        podspecPath: "RNTextDimensions.podspec",
       },
     },
   },
