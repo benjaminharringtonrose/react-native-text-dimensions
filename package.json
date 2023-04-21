@@ -1,5 +1,5 @@
 {
-  "name": "react-native-text-size",
+  "name": "react-native-text-dimensions",
   "version": "1.0.0",
   "description": "Accurately measure text",
   "main": "index.js",

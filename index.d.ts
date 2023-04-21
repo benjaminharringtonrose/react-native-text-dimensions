@@ -1,63 +1,78 @@
-declare module "react-native-text-size" {
-
-  export type TSFontWeight = 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
-  export type TSFontStyle = 'normal' | 'italic'
-  export type TSFontVariant = 'small-caps' | 'oldstyle-nums' | 'lining-nums' | 'tabular-nums' | 'proportional-nums'
-  export type TSTextBreakStrategy = 'simple' | 'highQuality' | 'balanced'
+declare module "react-native-text-dimensions" {
+  export type TSFontWeight =
+    | "normal"
+    | "bold"
+    | "100"
+    | "200"
+    | "300"
+    | "400"
+    | "500"
+    | "600"
+    | "700"
+    | "800"
+    | "900";
+  export type TSFontStyle = "normal" | "italic";
+  export type TSFontVariant =
+    | "small-caps"
+    | "oldstyle-nums"
+    | "lining-nums"
+    | "tabular-nums"
+    | "proportional-nums";
+  export type TSTextBreakStrategy = "simple" | "highQuality" | "balanced";
 
   export type TSFontSize = {
-    readonly default: number,
-    readonly button: number,
-    readonly label: number,
-    readonly smallSystem: number,
-    readonly system: number,
-  }
+    readonly default: number;
+    readonly button: number;
+    readonly label: number;
+    readonly smallSystem: number;
+    readonly system: number;
+  };
 
   export type TSMDStyleSpec =
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'subtitle1'
-  | 'subtitle2'
-  | 'body1'
-  | 'body2'
-  | 'button'
-  | 'caption'
-  | 'overline'
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "subtitle1"
+    | "subtitle2"
+    | "body1"
+    | "body2"
+    | "button"
+    | "caption"
+    | "overline";
 
   export type TSTextStyle =
-  | 'body'
-  | 'callout'
-  | 'caption1'
-  | 'caption2'
-  | 'footnote'
-  | 'headline'
-  | 'subheadline'
-  | 'largeTitle'
-  | 'title1'
-  | 'title2'
-  | 'title3'
+    | "body"
+    | "callout"
+    | "caption1"
+    | "caption2"
+    | "footnote"
+    | "headline"
+    | "subheadline"
+    | "largeTitle"
+    | "title1"
+    | "title2"
+    | "title3";
 
   export type TSFontInfo = {
-    fontFamily: string | null,
-    fontName?: string | null,
-    fontWeight: TSFontWeight,
-    fontSize: number,
-    fontStyle: TSFontStyle,
-    fontVariant?: TSFontVariant | null,
-    ascender: number,
-    descender: number,
-    capHeight?: number,
-    xHeight?: number,
-    top?: number,
-    bottom?: number,
-    leading: number,
-    lineHeight: number,
-    _hash: number,
-  }
+    fontFamily: string | null;
+    fontName?: string | null;
+    fontWeight: TSFontWeight;
+    fontSize: number;
+    fontStyle: TSFontStyle;
+    fontVariant?: TSFontVariant | null;
+    ascender: number;
+    descender: number;
+    capHeight?: number;
+    xHeight?: number;
+    top?: number;
+    bottom?: number;
+    leading: number;
+    lineHeight: number;
+    _hash: number;
+  };
 
   export interface TSFontSpecs {
     fontFamily?: string;
@@ -75,18 +90,18 @@ declare module "react-native-text-size" {
   }
 
   export type TSFontForStyle = {
-    fontFamily: string,
+    fontFamily: string;
     /** Unscaled font size, untits are SP in Android, points in iOS */
-    fontSize: number,
+    fontSize: number;
     /** fontStyle is omitted if it is "normal" */
-    fontStyle?: TSFontStyle,
+    fontStyle?: TSFontStyle;
     /** fontWeight is omitted if it is "normal" */
-    fontWeight?: TSFontWeight,
+    fontWeight?: TSFontWeight;
     /** @platform ios */
-    fontVariant?: Array<TSFontVariant> | null,
+    fontVariant?: Array<TSFontVariant> | null;
     /** iOS all, Android SDK 21+ with RN 0.55+ */
-    letterSpacing?: number,
-  }
+    letterSpacing?: number;
+  };
 
   export interface TSHeightsParams extends TSFontSpecs {
     /** The required text to measure. */
@@ -169,7 +184,7 @@ declare module "react-native-text-size" {
       /** Horizontal extent of this line, including leading margin indent, but excluding trailing whitespace. */
       width: number;
     };
-  }
+  };
 
   interface TextSizeStatic {
     measure(params: TSMeasureParams): Promise<TSMeasureResult>;
