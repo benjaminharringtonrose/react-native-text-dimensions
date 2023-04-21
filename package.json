@@ -1,6 +1,6 @@
 {
   "name": "react-native-text-dimensions",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Accurately measure text",
   "main": "index.js",
   "keywords": [
