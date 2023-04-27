@@ -1,4 +1,4 @@
-package com.benjaminharringtonrose.rntextdimensions;
+package com.rntextdimensions;
 
 import android.content.res.AssetManager;
 import android.graphics.Paint;

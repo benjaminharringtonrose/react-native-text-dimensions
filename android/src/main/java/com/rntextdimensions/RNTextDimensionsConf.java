@@ -1,4 +1,4 @@
-package com.benjaminharringtonrose.rntextdimensions;
+package com.rntextdimensions;
 
 import android.graphics.Typeface;
 import android.os.Build;

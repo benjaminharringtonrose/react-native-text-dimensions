@@ -1,4 +1,4 @@
-package com.benjaminharringtonrose.rntextdimensions;
+package com.rntextdimensions;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

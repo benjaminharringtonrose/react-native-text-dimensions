@@ -1,4 +1,4 @@
-package com.benjaminharringtonrose.rntextdimensions;
+package com.rntextdimensions;
 
 import android.annotation.TargetApi;
 import android.graphics.Typeface;

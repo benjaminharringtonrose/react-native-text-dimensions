@@ -3,7 +3,7 @@ module.exports = {
     platforms: {
       android: {
         packageImportPath:
-          "import com.benjaminharringtonrose.RNTextDimensionsPackage;",
+          "import com.rntextdimensions.RNTextDimensionsPackage;",
         packageInstance: "new RNTextDimensionsPackage()",
       },
       ios: {
