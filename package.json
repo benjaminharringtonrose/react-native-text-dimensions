@@ -23,7 +23,8 @@
   "license": "BSD-2-Clause",
   "scripts": {
     "release": "release-it",
-    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && cd android && ./gradlew clean"
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && cd android && ./gradlew clean",
+    "android:build": "cd android && ./gradlew assembleRelease"
   },
   "peerDependencies": {
     "react-native": ">=0.65.0"
